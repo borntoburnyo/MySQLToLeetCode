@@ -1,2 +1,2 @@
 # MySQLToLeetCode
-MySQL solution for LeetCode problems
+MySQL solutions for LeetCode problems
