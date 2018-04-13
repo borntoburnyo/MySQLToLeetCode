@@ -35,6 +35,7 @@ Sample Output
 |----------|
 | 45.00    |
 
+
 SELECT 
   SUM(TIV_2016) AS TIV_2016
 FROM 
