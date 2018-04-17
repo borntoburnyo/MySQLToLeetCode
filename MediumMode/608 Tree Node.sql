@@ -42,19 +42,19 @@ If there is only one node on the tree, you only need to output its root attribut
 
 SELECT 
 	id AS Id,
-  CASE
+	CASE
 		WHEN 
-      tree.id = (SELECT t1.id FROM tree AS t1 WHERE t1.p_id IS NULL) 
-		 THEN 
-      'Root'
-    WHEN 
-      tree.id IN (SELECT t1.p_id FROM tree AS t1) 
-	  THEN 
-      'Inner	
-    ELSE 
-      'Leaf'
-  END AS Type
-FROM 	
+			tree.id = (SELECT t1.id FROM tree AS t1 WHERE t1.p_id IS NULL) 
+		THEN 
+			'Root'
+		WHEN
+			tree.id IN (SELECT t1.p_id FROM tree AS t1) 
+		THEN 
+			'Inner
+		ELSE
+			'Leaf'
+	END AS Type
+FROM
 	tree
-ORDER BY 
+ORDER BY
 	id;
