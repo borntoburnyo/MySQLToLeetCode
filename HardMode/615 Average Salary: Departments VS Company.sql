@@ -29,8 +29,8 @@ So for the sample data above, the result is:
 
 SELECT
 	department_salary.pay_month,
-    department_id,
-    CASE 
+   	department_id,
+	CASE 
 		WHEN 
 			department_avg > company_avg
 		THEN 
@@ -46,8 +46,8 @@ FROM
 	(
 	SELECT
 		department_id,
-        AVG(amount) AS department_avg,
-        CONCAT(YEAR(pay_date), '-', MONTH(pay_date)) AS pay_month
+        	AVG(amount) AS department_avg,
+        	CONCAT(YEAR(pay_date), '-', MONTH(pay_date)) AS pay_month
 	FROM 
 		salary JOIN employee ON salary.employee_id = employee.employee_id
 	GROUP BY 
@@ -57,7 +57,7 @@ JOIN
 	(
     SELECT 
 		AVG(amount) AS company_avg,
-        CONCAT(YEAR(pay_date), '-', MONTH(pay_date)) AS pay_month
+        	CONCAT(YEAR(pay_date), '-', MONTH(pay_date)) AS pay_month
 	FROM 
 		salary JOIN employee ON salary.employee_id = employee.employee_id
 	GROUP BY 
