@@ -35,4 +35,22 @@ Bonus points if you can solve it without using any built-in SQL functions.
 +-----+------------+--------+
 
 SELECT 
+  t1.Id,
+  t1.Company,
+  t1.Salary
+FROM 
+  Employee AS t1,
+  Employee AS t2
+WHERE 
+  t1.Company = t2.Company
+GROUP BY
+  t1.Company, t1.Salary
+HAVING 
+  SUM(
+    CASE 
+      WHEN t1.Salary = t2.Salary THEN 1
+      ELSE 0
+  ) >= ABS(SUM(SIGN(t1.Salary - t2.Salary)))
+ORDER BY 
+  t1.Id;
   
