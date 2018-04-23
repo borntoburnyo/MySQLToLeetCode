@@ -63,7 +63,7 @@ SELECT
     t2.Id = t1.Id
   ) AS Salary 
 FROM 
-  Employee AS t1
+  Employee AS t1,
   (
   SELECT 
     t3.Id,
