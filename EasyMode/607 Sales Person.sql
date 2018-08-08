@@ -50,7 +50,7 @@ output
 | Alex |
 +------+
 
-Explanation
+Explanation:
 
 According to order '3' and '4' in table orders, it is easy to tell only salesperson 'John' and 'Alex' have sales 
 
@@ -59,15 +59,12 @@ to company 'RED', so we need to output all the other names in table salesperson.
 SELECT 
   s.name
 FROM 
-  salesperson AS s 
+  saleperson AS s
 WHERE 
-  s.sales_id NOT IN (SELECT 
-                        o.sales_id 
-                     FROM 
-                        orders AS o JOIN company as c ON com_id 
-                     WHERE c.name = 'RED');
-  
-
-
-
-
+  s.sales_id NOT IN (
+    SELECT 
+      o.sales_id 
+    FROM
+      orders AS o JOIN company AS c ON com_id
+    WHERE c.name = 'RED');
+    
