@@ -31,7 +31,7 @@ FROM
     ON 
       t1.ManagerId = t2.Id
 GROUP BY 
-  t1.ManagerId
+  t2.Name
 HAVING 
   COUNT(t2.Name) >= 5; 
       
